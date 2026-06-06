@@ -15,8 +15,8 @@
     .blob1{width:400px;height:400px;background:#4ade80;right:-100px;top:10%;animation:liquidFlow 20s linear infinite}
     .blob2{width:450px;height:450px;background:#fb923c;left:-100px;bottom:10%;animation:liquidFlow 25s linear infinite reverse}
     .blob-sq1, .blob-sq2 { display: none; } /* Mengurangi jumlah elemen bergerak untuk FPS */
-    .container{width:min(1400px,95vw);position:relative;z-index:10;animation:fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1)}
-    .card{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;padding:50px;border-radius:48px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 15px 35px rgba(0,0,0,0.05);overflow:hidden;contain: layout style;}
+    .container{width:min(1400px,95vw);position:relative;z-index:10;animation:fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);will-change:transform}
+    .card{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;padding:50px;border-radius:48px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 15px 35px rgba(6, 95, 70, 0.08);overflow:hidden;contain: layout style;}
     .card::before, .card::after,
     .info-section::before, .info-section::after,
     .wish::before, .wish::after {
@@ -60,7 +60,7 @@
         border-bottom-right-radius: 6px;
     }
     .item{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:10px 15px;transition:.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)}
-    .wish{position:relative;margin-top:25px;padding:22px;border-radius:28px;background:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.4);box-shadow:0 10px 30px rgba(0,0,0,0.03)}
+    .wish{position:relative;margin-top:25px;padding:22px;border-radius:28px;background:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.4);box-shadow:0 10px 30px rgba(6, 95, 70, 0.04)}
     .wish::before { /* Top-left corner for wish */
         top: 10px; left: 10px;
         border-top-width: 1.5px; border-left-width: 1.5px;
@@ -71,7 +71,7 @@
         border-bottom-width: 1.5px; border-right-width: 1.5px;
         border-bottom-right-radius: 6px;
     }
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.8);box-shadow:0 8px 20px rgba(0,0,0,0.04);font-weight:700;font-size:0.85rem;color:#065f46;animation:floating 5s ease-in-out infinite}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.8);box-shadow:0 8px 20px rgba(6, 95, 70, 0.05);font-weight:700;font-size:0.85rem;color:#065f46;animation:floating 5s ease-in-out infinite}
     .left h1{font-size:clamp(3rem,6vw,5.5rem);line-height:1;font-weight:900;letter-spacing:-3px;margin-top:20px;color:#064e3b}
     .left h1 span{display:block;background:linear-gradient(90deg,#a7f3d0,#f97316,#a7f3d0);background-size:200% auto;-webkit-background-clip:text;color:transparent;animation:gradient 6s linear infinite}
     .desc{font-size:1.05rem;line-height:1.7;color:#065f46;max-width:650px}
@@ -88,8 +88,8 @@
     .right{display:flex;justify-content:center;align-items:center}
     .photo-wrapper{position:relative;max-width:380px;width:100%;height:auto;animation:photoFloat 8s ease-in-out infinite;will-change:transform;transform:translate3d(0,0,0)}
     .glow{display: none;} /* Glow radial berat untuk mobile GPU */
-    .photo{width:100%;height:auto;padding:10px;border-radius:44px;background:rgba(255,255,255,0.6);border:1.5px solid rgba(255,255,255,0.7);overflow:hidden;display:block}
-    .photo img{width:100%;height:auto;object-fit:contain;border-radius:34px;mix-blend-mode:normal}
+    .photo{width:100%;height:auto;padding:10px;border-radius:44px;background:rgba(147, 255, 192, 0.15);border:1.5px solid rgba(147, 255, 192, 0.15);overflow:hidden;display:block}
+    .photo img{width:100%;height:auto;object-fit:contain;border-radius:34px;mix-blend-mode:normal;filter:brightness(0.9)}
     /* Removed deco-icon styles */
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     @keyframes gradient{0%{background-position:0% 50%}100%{background-position:200% 50%}}
